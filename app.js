@@ -78,25 +78,25 @@ scene.add(floor)
 // =======================================================
 // ライト
 const light = makeLight();
-// scene.add(light);
-// scene.add(light.target);
-// scene.add(new THREE.SpotLightHelper(light));
+scene.add(light);
+scene.add(light.target);
+scene.add(new THREE.SpotLightHelper(light));
 
 const light2 = makeLight();
-light2.position.x = -25;
-light2.position.z = -100;
-light2.target.position.set(-100,0,0)
-scene.add(light2);
-scene.add(light2.target);
+// light2.position.x = -25;
+// light2.position.z = -100;
+// light2.target.position.set(-100,0,0)
+// scene.add(light2);
+// scene.add(light2.target);
 
 const lightHelper = new THREE.SpotLightHelper(light2);
 scene.add(lightHelper);
 // =======================================================
 
 const cameraOffsetZ = 15;
-// camera.position.set(1, 5, cameraOffsetZ); // 背後
+camera.position.set(1, 5, cameraOffsetZ); // 背後
 // camera.position.set(-50, 20, 0);
-camera.position.set(0, 200, 0); // 上から
+// camera.position.set(0, 200, 0); // 上から
 // camera.rotation.set(2, 1, 1)
 
 // カメラコントローラーを作成
@@ -110,8 +110,8 @@ function animate() {
   // controls.update();
   lightHelper.update();
 
-  // camera.position.z += -0.1;
-  // man.position.z += -1;
+  camera.position.z += -0.1;
+  man.position.z += -1;
   if (man.position.z < -100) {
     man.position.z = 100;
   }
