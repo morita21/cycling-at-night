@@ -7,9 +7,25 @@
     body {
       margin: 0;
     }
+
+    .renderer2 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      border: 3px solid #ccc;
+    }
+
+    #isPlaying {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      color: #ccc;
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
+<div id="isPlaying"></div>
 <script src="three.js-master/build/three.js"></script>
 <script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
 <script src="app.js"></script>
