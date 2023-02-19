@@ -75,9 +75,9 @@ document.getElementById('isPlaying').addEventListener("click", (e) => {
 });
 
 function makeMan() {
-  const material = new THREE.MeshPhongMaterial({color: 0x00ff00});
-  const material2 = new THREE.MeshPhongMaterial({color: 0x00aaff});
-  const material3 = new THREE.MeshPhongMaterial({color: 0x888888});
+  const material = new THREE.MeshPhongMaterial({color: 0xff9a62});
+  const material2 = new THREE.MeshPhongMaterial({color: 0x3739c7});
+  const material3 = new THREE.MeshPhongMaterial({color: 0x333333});
 
   const man = new THREE.Object3D();
 
@@ -197,7 +197,7 @@ scene.add(man);
 // 地面
 const floor = new THREE.Mesh(
   new THREE.PlaneGeometry(50, roadSize * roadTileNum),
-  new THREE.MeshPhongMaterial({color: 0xaaccff})
+  new THREE.MeshPhongMaterial({color: 0x4a588c})
 );
 // 長さの半分ずらして、端を原点にする
 floor.geometry.translate( 0, roadSize * roadTileNum / 2, 0 );
@@ -233,7 +233,7 @@ scene.add(floor)
 const sphereSize = 5;
 const lightMeshMat = new THREE.MeshBasicMaterial({color: 0xcccccc});
 for (let i = 0; i <= 7; i++) {
-  let light = new THREE.PointLight(0xff3333, 1, 200, 2);
+  let light = new THREE.PointLight(0xfbffbc, 1, 200, 2);
   light.position.set(20, 20, 0 - i * (roadSize / 2));
   light.castShadow = true;
   scene.add(light);
