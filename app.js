@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import {OrbitControls} from 'OrbitControls';
+
 const roadSize = 300;
 const roadTileNum = 5;
 const manInitZ = 0;
@@ -238,7 +241,7 @@ camera1.position.set(0, 200, 0); // 上から
 // camera2.rotation.x = THREE.MathUtils.degToRad(-90);
 
 // カメラコントローラーを作成
-const controls = new THREE.OrbitControls(camera1, document.body);
+const controls = new OrbitControls(camera1, document.body);
 // 滑らかにカメラコントローラーを制御する
 // controls.enableDamping = true;
 // controls.dampingFactor = 0.2;
