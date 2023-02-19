@@ -66,10 +66,10 @@ function togglePreview(){
   renderer2Size = renderer2Size == 1 ? 0.2 : 1;
   if (renderer2Size == 1) {
     renderer2.domElement.classList.add('full')
-    renderer2.setSize(window.innerWidth, window.innerHeight);
+    renderer2.setSize(window.innerWidth, window.innerHeight, false);
   } else {
     renderer2.domElement.classList.remove('full')
-    renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
+    renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6, false);
   }
 }
 
