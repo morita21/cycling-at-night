@@ -43,9 +43,7 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-const clickEventType = (window.ontouchstart !== null) ? 'click' : 'touchend';
-console.log('clickEventType', clickEventType);
-window.addEventListener(clickEventType, (e) => {
+window.addEventListener("click", (e) => {
   renderer2Size = 1 - renderer2Size;
   renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
 });
