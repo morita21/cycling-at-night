@@ -29,8 +29,6 @@ const camera2 = new THREE.PerspectiveCamera(
 let anime = true;
 updateIsPlayingLabel()
 
-let renderer2Size = 0.2;
-
 window.addEventListener("keydown", (e) => {
   if (e.code === 'Space') {
     anime = !anime;
@@ -53,12 +51,18 @@ renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 const renderer2 = new THREE.WebGLRenderer();
-renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
 renderer2.shadowMap.enabled = true;
 document.body.appendChild(renderer2.domElement);
 renderer2.domElement.classList.add('renderer2')
 
+let renderer2Size = 0.2;
+togglePreview();
+
 renderer2.domElement.addEventListener("click", (e) => {
+  togglePreview();
+});
+
+function togglePreview(){
   renderer2Size = renderer2Size == 1 ? 0.2 : 1;
   if (renderer2Size == 1) {
     renderer2.domElement.classList.add('full')
@@ -67,7 +71,7 @@ renderer2.domElement.addEventListener("click", (e) => {
     renderer2.domElement.classList.remove('full')
     renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
   }
-});
+}
 
 document.getElementById('isPlaying').addEventListener("click", (e) => {
   anime = !anime;
