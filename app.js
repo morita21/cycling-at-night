@@ -59,8 +59,14 @@ document.body.appendChild(renderer2.domElement);
 renderer2.domElement.classList.add('renderer2')
 
 renderer2.domElement.addEventListener("click", (e) => {
-  renderer2Size = 1 - renderer2Size;
-  renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
+  renderer2Size = renderer2Size == 1 ? 0.2 : 1;
+  if (renderer2Size == 1) {
+    renderer2.domElement.classList.add('full')
+    renderer2.setSize(window.innerWidth, window.innerHeight);
+  } else {
+    renderer2.domElement.classList.remove('full')
+    renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
+  }
 });
 
 function makeMan() {
