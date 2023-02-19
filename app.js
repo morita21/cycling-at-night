@@ -267,7 +267,7 @@ const controls = new OrbitControls(camera1, document.body);
 // controls.dampingFactor = 0.2;
 
 // 背後カメラ
-camera2.position.set(1, 5, cameraOffsetZ); // 背後
+camera2.position.set(0, 9.5, cameraOffsetZ); // 背後
 camera2.rotation.set(-0.2, 0, 0)
 
 
