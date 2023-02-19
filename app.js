@@ -249,8 +249,6 @@ for (let i = 0; i <= 7; i++) {
   let light = new THREE.PointLight(0xfbffbc, 1, 200, 2);
   light.position.set(20, 20, 0 - i * (roadSize / 2));
   light.castShadow = true;
-  light.shadow.mapSize.width = 1024;
-  light.shadow.mapSize.height = 1024;
   scene.add(light);
 
   let lightMesh = new THREE.Mesh(new THREE.SphereGeometry(2), lightMeshMat);
