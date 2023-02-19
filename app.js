@@ -43,6 +43,11 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+window.addEventListener("click", (e) => {
+  renderer2Size = 1 - renderer2Size;
+  renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
+});
+
 function updateIsPlayingLabel() {
   document.getElementById('isPlaying').innerText = anime ? 'now playing' : 'paused';
 }
