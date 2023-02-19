@@ -69,6 +69,11 @@ renderer2.domElement.addEventListener("click", (e) => {
   }
 });
 
+document.getElementById('isPlaying').addEventListener("click", (e) => {
+  anime = !anime;
+  updateIsPlayingLabel();
+});
+
 function makeMan() {
   const material = new THREE.MeshPhongMaterial({color: 0x00ff00});
   const material2 = new THREE.MeshPhongMaterial({color: 0x00aaff});
