@@ -43,11 +43,6 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-window.addEventListener("click", (e) => {
-  renderer2Size = 1 - renderer2Size;
-  renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
-});
-
 function updateIsPlayingLabel() {
   document.getElementById('isPlaying').innerText = anime ? 'now playing' : 'paused';
 }
@@ -62,6 +57,11 @@ renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * rendere
 renderer2.shadowMap.enabled = true;
 document.body.appendChild(renderer2.domElement);
 renderer2.domElement.classList.add('renderer2')
+
+renderer2.domElement.addEventListener("click", (e) => {
+  renderer2Size = 1 - renderer2Size;
+  renderer2.setSize(window.innerWidth * renderer2Size, window.innerWidth * renderer2Size * 1.6);
+});
 
 function makeMan() {
   const material = new THREE.MeshPhongMaterial({color: 0x00ff00});
