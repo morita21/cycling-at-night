@@ -298,4 +298,23 @@ function animate() {
   renderer2.render(scene, camera2);
 }
 
+// 初期化のために実行
+onResize();
+// リサイズイベント発生時に実行
+window.addEventListener('resize', onResize);
+
+function onResize() {
+  // サイズを取得
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  // レンダラーのサイズを調整する
+  renderer2.setPixelRatio(window.devicePixelRatio);
+  renderer2.setSize(width, height);
+
+  // カメラのアスペクト比を正す
+  camera2.aspect = width / height;
+  camera2.updateProjectionMatrix();
+}
+
 animate();
