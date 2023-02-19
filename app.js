@@ -83,6 +83,15 @@ function makeMan() {
   const material2 = new THREE.MeshPhongMaterial({color: 0x3739c7});
   const material3 = new THREE.MeshPhongMaterial({color: 0x333333});
 
+  // 非表示にしつつ影を落とす設定
+  // https://stackoverflow.com/questions/50108147
+  material.colorWrite = false
+  material.depthWrite = false
+  material2.colorWrite = false
+  material2.depthWrite = false
+  material3.colorWrite = false
+  material3.depthWrite = false
+
   const man = new THREE.Object3D();
 
   const head = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 16), material);
